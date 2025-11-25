@@ -2,13 +2,13 @@
 
 This project was developed in collaboration with [Edouard Thinot](https://github.com/ethinot) as part of the course *Mif02 - "Computer Graphics and Image Processing"* for the Master's program in Computer Science at the University Claude Bernard Lyon 1, Villeurbanne, France.
 
-The project focuses on image segmentation using the region-growing technique. For more detailed information, please refer to [*rapport.pdf*](rapport.pdf) (in french).
+The project focuses on image segmentation using the region-growing technique. For more detailed information, please refer to [RegionGrowingFr.pdf](RegionGrowingFr.pdf) (in french).
 
 ### Project Structure
 
 ```
 .
-├── ressources # contains input images 
+├── rsc # contains input images 
 |   ├── image_couche.png
 |   └── image_debout.png
 ├── src
@@ -38,8 +38,8 @@ This project relies on OpenCV. Please follow [this link](https://opencv.org/get-
    * Build the `seg` project and set it as the startup project.
    * Go to `Debug` -> `seg Debugging Properties` -> `Debugging` -> `Command Arguments`:
      * Add the following command-line arguments:
-       * `../ressources/<image to load> <0 or 1 for boundary display> <0 or 1 for colorization mode>`
-       * Example: `../ressources/image_debout.png 0 1`
+       * `../rsc/<image to load> <0 or 1 for boundary display> <0 or 1 for colorization mode>`
+       * Example: `../rsc/image_debout.png 0 1`
    * Switch to `Release` mode and run the program.
 
 2. **Using CLion**:
@@ -49,7 +49,7 @@ This project relies on OpenCV. Please follow [this link](https://opencv.org/get-
    * Build the `seg` project and set it as the startup project.
    * Go to `Run` -> `Edit Configurations` -> `Debug` -> `Program Arguments`:
      * Add the following command-line arguments:
-       * Example: `../ressources/image_debout.png 0 1`
+       * Example: `../rsc/image_debout.png 0 1`
    * Select the `Release-Visual Studio` CMake profile and run the program.
 
 #### Linux
@@ -57,7 +57,7 @@ This project relies on OpenCV. Please follow [this link](https://opencv.org/get-
   * `cmake -B build -DCMAKE_BUILD_TYPE=Release`
   * `cmake --build build/ -t seg`
 * Once the executable is created, you can run it with the following command:
-  * Example: `./build/seg ./ressources/image_debout.png 0 1`
+  * Example: `./build/seg ./rsc/image_debout.png 0 1`
 
 ### Command-Line Arguments
 
@@ -75,6 +75,6 @@ The command follows this format: `./seg <path/to/your/image> <display mode> <col
 
 A first part of this academic project was focusing on image processing techniques such as : streching of histograms, equalization of histograms, convolution and filtering. 
 
-You can find a report (in french) explaining them : [image_processing.md](extra/image_processing.md).
+You can find a report (in french) explaining them : [README.md](extra/README.md).
 
 

@@ -7,12 +7,12 @@ find_package(OpenCV REQUIRED)
 
 # Add your source files
 set(SOURCES
-    main.cpp
-    ImageProcessor.hpp
-    SegmentedRegion.hpp
-    GermsPositioning.hpp
-    ImageUtil.hpp
-    GrowAndMerge.hpp
+    src/main.cpp
+    src/ImageProcessor.hpp
+    src/SegmentedRegion.hpp
+    src/GermsPositioning.hpp
+    src/ImageUtil.hpp
+    src/GrowAndMerge.hpp
 )
 
 # Create the executable

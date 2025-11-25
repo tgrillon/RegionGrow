@@ -11,7 +11,7 @@
 
 // Fonction pour l'affichage des histogrammes
 void gnuPlot(const cv::Mat& hist, const std::string& fileName, const int histSize) {
-    std::ofstream dataFile("./ressources/" + fileName + ".txt");
+    std::ofstream dataFile("./data/images/" + fileName + ".txt");
     for (int i = 0; i < histSize; i++) {
         dataFile << i << " " << hist.at<float>(i) << std::endl;
     }
@@ -20,7 +20,7 @@ void gnuPlot(const cv::Mat& hist, const std::string& fileName, const int histSiz
     FILE* gnuplotPipe = popen("gnuplot -persistent", "w");
     if (gnuplotPipe) {
         fprintf(gnuplotPipe, "set title 'Histogramme de %s'\n", fileName.c_str());
-        fprintf(gnuplotPipe, "plot './ressources/%s.txt' with boxes\n", fileName.c_str());
+        fprintf(gnuplotPipe, "plot './data/images/%s.txt' with boxes\n", fileName.c_str());
         fflush(gnuplotPipe);
         getchar(); 
         pclose(gnuplotPipe);

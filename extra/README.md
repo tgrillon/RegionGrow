@@ -19,13 +19,13 @@ Pour que l'affichage des histogrammes soit plus lissible et agréable on utilise
 sudo apt-get install gnuplot
 ```
 
-Notre programme vas chercher les ressources dans le fichier du même nom. Il est donc important de crée un fichier *ressources* à la racine du projet contenant les images traitées par le programme.
+Notre programme vas chercher les rsc dans le fichier du même nom. Il est donc important de crée un fichier *rsc* à la racine du projet contenant les images traitées par le programme.
 
 Pour lancer le projet :
 1. Compiler avec avec la commande **make**
 2. Lancer la sortie produit par le compilateur suivie de deux images en niveau de gris (ici Lena et le cameraman).
    
-   * Exemple : ```./output ./ressources/lena-baw.png ./ressources/cameraman.surexp.png ```
+   * Exemple : [lena-baw.png](./data/images/lena-baw.png) [cameraman.surexp.png](./data/images/cameraman.surexp.png) 
 
 ## Histogramme
 
@@ -37,7 +37,7 @@ Pour créer un histogramme, nous avons utilisé la fonction opencv **calcHist**.
 
 Histogramme non-normalisé obtenu :
 
-![Histogramme pour une image en niveaux de gris (Léna)](./rapportImages/histogramme-non-normaliser.png)
+![Histogramme pour une image en niveaux de gris (Léna)](./data/images/histogramme-non-normaliser.png)
 
 #### Histogramme Normalisé
 
@@ -45,7 +45,7 @@ La **normalisation** (en valeurs de probabilité) revient à **diviser notre his
 
 Histogramme normalisé obtenu :
 
-![Histogramme normalisé pour une image en niveaux de gris (Léna)](./rapportImages/histogramme-normaliser.png)
+![Histogramme normalisé pour une image en niveaux de gris (Léna)](./data/images/histogramme-normaliser.png)
 
 #### Histogramme Cumulé 
 
@@ -53,7 +53,7 @@ En plus du calcul de l'histogramme normalisé nous allons avoir besoin de l'**hi
 
 Histogramme cumulé obtenu :
 
-![Histogramme cumulé (Léna)](./rapportImages/histogramme-cummle.png)
+![Histogramme cumulé (Léna)](./data/images/histogramme-cummle.png)
 
 ### Étirement d’histogramme
 
@@ -65,7 +65,7 @@ Pour la calculer, il faut:
 2. On applique une transformation linéaire pour étirer l'histogramme sur toute la plage de valeurs possibles (soit dans notre cas **[0, 255]**). Tel que la formule ressemble à 
    * *I2(x,y) = 255 * (I1(x,y) − Nmin / Nmax − Nmin)* où **I1** est l'image que l'on souhaite modifié et **I2** l'image résultante de l'étirement. 
   
-![Images/Histogrammes avant et après étirement](./rapportImages/comparaison-etirement.png)
+![Images/Histogrammes avant et après étirement](./data/images/comparaison-etirement.png)
 
 Ci-dessus une image de nos résultats avec pour chaque image son histogramme correspondant à droite. On peut constater qu'avec des valeurs mieux réparties sur l'ensemble des différents niveaux de gris, l'image apparaît plus nette.
 
@@ -77,9 +77,9 @@ Pour le processus d'égalisation d'histogramme, nous avons besoin de **calculer 
 
 Les images ci-dessous montre le résultat obtenu, les contrastes sont beaucoup plus claire.
 
-![Images avant et après égalisation](./rapportImages/egalisation-avant-apres.png)
+![Images avant et après égalisation](./data/images/egalisation-avant-apres.png)
 
-![Histogrammes avant et après égalisation](./rapportImages/histogramme-egalisation.png)
+![Histogrammes avant et après égalisation](./data/images/histogramme-egalisation.png)
 
 ## Produit de convolution et filtrage
 
@@ -87,4 +87,4 @@ Pour le **filtrage**, on parcourt l'image de la case **[1,1]** jusqu'à la case 
 
 Les photos ci-dessous appliquent respectivement au milieu un filtre de floue (**passe-bas**) et à droite un filtre de contour (**passe-haut**). 
 
-![Résultats des différents produit de convolution](./rapportImages/resultat-convolution.png)
+![Résultats des différents produit de convolution](./data/images/resultat-convolution.png)
